@@ -1,0 +1,50 @@
+<h1>Listing prospects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Contact</th>
+      <th>Contact email</th>
+      <th>Contact title</th>
+      <th>Company description</th>
+      <th>Company url</th>
+      <th>Company image url</th>
+      <th>Company bcorp url</th>
+      <th>Responded</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prospects.each do |prospect| %>
+      <tr>
+        <td><%= prospect.company_name %></td>
+        <td><%= prospect.contact %></td>
+        <td><%= prospect.contact_email %></td>
+        <td><%= prospect.contact_title %></td>
+        <td><%= prospect.company_description %></td>
+        <td><%= prospect.company_url %></td>
+        <td><%= prospect.company_image_url %></td>
+        <td><%= prospect.company_bcorp_url %></td>
+        <td><%= prospect.responded %></td>
+        <td><%= link_to 'Show', prospect %></td>
+        <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
+        <td><%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prospect', new_prospect_path %>
+
+<h2>Import Prospects</h2>
+
+<%= form_tag import_prospects_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

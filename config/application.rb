@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'csv'
+require 'roo'
+# require 'iconv'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -11,10 +14,7 @@ module Leadgen
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      g.test_framework :rspec
-      
-      
-      
+      g.test_framework :rspec  
       
       g.view_specs false
       g.helper_specs false

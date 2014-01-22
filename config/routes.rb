@@ -1,5 +1,11 @@
 Leadgen::Application.routes.draw do
-  root :to => "home#index"
+  # resources :prospects
+
+  resources :prospects do
+  	collection { post :import }
+  end
+
+  root :to => "prospects#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   # devise_scope :user do

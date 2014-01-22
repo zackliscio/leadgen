@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @prospect.company_name %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @prospect.contact %>
+</p>
+
+<p>
+  <strong>Contact email:</strong>
+  <%= @prospect.contact_email %>
+</p>
+
+<p>
+  <strong>Contact title:</strong>
+  <%= @prospect.contact_title %>
+</p>
+
+<p>
+  <strong>Company description:</strong>
+  <%= @prospect.company_description %>
+</p>
+
+<p>
+  <strong>Company url:</strong>
+  <%= @prospect.company_url %>
+</p>
+
+<p>
+  <strong>Company image url:</strong>
+  <%= @prospect.company_image_url %>
+</p>
+
+<p>
+  <strong>Company bcorp url:</strong>
+  <%= @prospect.company_bcorp_url %>
+</p>
+
+<p>
+  <strong>Responded:</strong>
+  <%= @prospect.responded %>
+</p>
+
+<%= link_to 'Edit', edit_prospect_path(@prospect) %> |
+<%= link_to 'Back', prospects_path %>
